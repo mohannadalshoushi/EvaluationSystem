@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+/* Variables */
+:root {
+    /* Font Family */
+    --global--font-primary: 'Roboto', sans-serif;
+
+    /* Font Size */
+    --global--font-size-h1: 3.6rem;
+    --global--font-size-h2: 2.4rem;
+    --global--font-size-h3: 1.8rem;
+    --global--font-size-p: 1.4rem;
+    --global--letter-spacing: normal;
+
+    /* Font Weight */
+    --global--font-weight-regular: 400;
+    --global--font-weight-emphasis: 700;
+    
+    /* Line Height */
+	--global--line-height-body: 1.7;
+	--global--line-height-heading: 1.3;
+    --global--line-height-page-title: 1.1;
+    
+    /* Spacing & Sizing */
+    --global--spacing-primary: 2rem;
+    --global--spacing-secondary: 1rem;
+    --global--sizing-icon: 2.4rem;
+    --global--sizing-icon-L: 3.6rem; 
+    --global--border-radius: 3.6rem;
+
+    /* Colors */
+    --global--color-primary--600: #0053AD;
+    --global--color-primary--500: #628CCC;
+    --global--color-primary--400: #D4DAF2;
+    --global--color-secondary--600: #219653;
+    --global--color-secondary--500: #27AE60;
+    --global--color-secondary--400: #6FCF97;
+    --global--color-ink--600: #333333;
+    --global--color-ink--500: #4F4F4F;
+    --global--color-ink--400: #828282;
+    --global--color-ink--300: #BDBDBD;
+    --global--color-ink--200: #E0E0E0;
+    --global--color-ink--100: #F2F2F2;
+    --global--color-on-dark: #FFFFFF;
+}
+
+/* Container */
+
+html { font-size: 10px; }
+body {
+    font-size: var(--global--font-size-p);
+    font-family: var(--global--font-primary);
+    font-weight: var(--global--font-weight-regular);
+}
+.content {
+    margin: var(--global--spacing-primary);
+}
+
+/* Typography */
+h1, .h1 {
+    font-size: var(--global--font-size-h1);
+    font-weight: var(--global--font-weight-emphasis);
+}
+
+h2, .h2 {
+    font-size: var(--global--font-size-h2);
+    font-weight: var(--global--font-weight-emphasis);
+}
+h3, .h3 {
+    font-size: var(--global--font-size-h3);
+    font-weight: var(--global--font-weight-emphasis);
+}
+.highlight {
+    font-weight: var(--global--font-weight-emphasis);
+}
+.link {
+    color: var(--global--color-primary--600);
+    text-decoration: underline;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    color: var(--global--color-on-dark);
+    text-decoration: none;
+    border: none;
+}
+.button._primary {
+    padding: var(--global--spacing-primary);
+    background: var(--global--color-primary--600);
+    border-radius: var(--global--border-radius);
+}
+.button._primary:active {
+    background: var(--global--color-ink--600);
+}
+.button._secondary {
+    padding: var(--global--spacing-secondary) var(--global--spacing-primary);
+    background: var(--global--color-ink--600);
+    border-radius: var(--global--spacing-primary);
+}
+
+/* Top Navigation */
+.topnav {
+    background: var(--global--color-ink--600);
+    color: var(--global--color-white);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--global--spacing-secondary) var(--global--spacing-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    align-items: center;
+}
+.topnav a {
+    color: var(--global--color-on-dark);
+}
+
+.topnav-icon .material-icons {
+    font-size: var(--global--sizing-icon-L);
+}
+
+.topnav-logo {
+    background: url("../img/UJ-logos.png") ;
+    width: 400px;
+    height: 100px;
+    background-size: cover;
+    
+}
+
+/* Header Area */
+.header {
+    background-size: cover;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+.header>img {
+    width: 100%;
+}
+#wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* List */
+.content-list {
+    list-style: none;
+    padding-inline-start: 0;
+}
+.service-link {
+    margin-bottom: var(--global--spacing-primary);
+}
+.service-link a{
+    display: flex;
+    text-decoration: none;
+    color: var(--global--color-ink--600);
+    font-weight: var(--global--font-weight-emphasis);
+    padding: var(--global--spacing-primary);
+    background: var(--global--color-primary--400);
+    justify-content: space-between;
+    align-items: center;
+}
+.service-link a::after{
+    content:"\203A";
+    font-size: var(--global--sizing-icon-L);
+}
+
+/* Accordion */
+.accordion {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+a.accordion-tab {
+    background: transparent;
+    padding: var(--global--spacing-primary);
+    cursor: pointer;
+    margin-bottom: 0;
+    border: 1px var(--global--color-primary--400);
+    border-style: solid none;
+    font-weight: var(--global--font-weight-emphasis);
+}
+.accordion-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.accordion-panel{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 var(--global--spacing-primary);
+    background: var(--global--color-ink--100);
+    border-left: 3px solid var(--global--color-primary--600);
+}
+/* Tab not active, plus icon */
+.accordion-label:after {
+    content: '\002B';
+    color: var(--global--color-primary--600);
+    font-weight: var(--global--font-weight-emphasis);
+    font-size: var(--global--sizing-icon);
+}
+/* Tab active, minus icon */
+.accordion-label.active:after {
+    content: "\2212";
+}
+
+/* Contact */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+.contact-form label {
+    margin-bottom: var(--global--spacing-secondary);
+}
+.contact-form input[type=text], 
+.contact-form input[type=email], 
+.contact-form textarea {
+    box-sizing: border-box;
+    background: var(--global--color-ink--200);
+    padding: var(--global--spacing-primary);
+    border: none;
+    margin-bottom: var(--global--spacing-primary);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none !important;
+    border: 3px solid var(--global--color-primary--600);
+}
+
+/* Overlay */
+.overlay {
+    height: 100%;
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--global--color-primary--600);
+    color: var(--global--color-on-dark);
+    padding: var(--global--spacing-primary);
+    flex-direction: column;
+}
+.overlay-icon .material-icons {
+    font-size: var(--global--sizing-icon-L);
+}
+.overlay-icon._close {
+    text-align: end;
+}
+.overlay .search-form {
+    display: flex;
+}
+.overlay input{
+    background: var(--global--color-primary--600) !important;
+    border: none;
+    border-bottom: 1px solid var(--global--color-on-dark);
+    color: var(--global--color-on-dark);
+    font-size: var(--global--font-size-h2);
+    flex: 1;
+}
+.overlay input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--global--color-on-dark);
+    opacity: 1; /* Firefox */
+}
+.overlay input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--global--color-on-dark);
+}
+.overlay input::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--global--color-on-dark);
+}
+.overlay input:focus {
+    outline: none !important;
+    border-bottom: 3px solid var(--global--color-on-dark);
+}
+.search-button {
+    border: none;
+    background: var(--global--color-on-dark);
+    color: var(--global--color-ink--600);
+    font-size: var(--global--sizing-icon-L);
+}
+.search-button:active {
+    background: var(--global--color-ink--600);
+    color: var(--global--color-on-dark);
+}
+.search-list {
+    list-style: none;
+    padding-inline-start: 0;
+}
+.result-item {
+    margin-bottom: var(--global--spacing-primary);
+    border-bottom: 1px solid var(--global--color-primary--500);
+}
+.result-link {
+    display: inline-block;
+    padding: var(--global--spacing-primary) 0;
+    text-decoration: none;
+    color: var(--global--color-on-dark);
+}
+.result-tag {
+    display: inline-block;
+    color: var(--global--color-ink--600);
+    background: var(--global--color-primary--400);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.logout-button {
+    margin: 0px 0px 5px 20px;
+    background-color: #0E538A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #D4DAF2;
+    transform: scale(1.05);
+}
+
+.logout-button:active {
+    background-color: #D4DAF2;
+    transform: scale(0.98);
+}
